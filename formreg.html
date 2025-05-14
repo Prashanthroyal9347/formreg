@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration and Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-section {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 5px;
+      width: 400px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+    }
+    input[type="submit"] {
+      margin-top: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Registration Form -->
+  <div class="form-section">
+    <h2>Registration Form</h2>
+    <form action="/submit-registration" method="post">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="firstname" required>
+
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120">
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="website">Website:</label>
+      <input type="url" id="website" name="website">
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob">
+
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" name="resume">
+
+      <label>
+        <input type="checkbox" name="subscribe" value="yes">
+        Subscribe to newsletter
+      </label>
+
+      Gender:
+      <label><input type="radio" name="gender" value="male"> Male</label>
+      <label><input type="radio" name="gender" value="female"> Female</label>
+      <label><input type="radio" name="gender" value="other"> Other</label>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <option value="uk">UK</option>
+      </select>
+
+      <input type="hidden" name="user_role" value="new_user">
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <!-- Login Form -->
+  <div class="form-section">
+    <h2>Login Form</h2>
+    <form action="/login" method="post">
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" name="email" required>
+
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" name="password" required>
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+</body>
+</html>
